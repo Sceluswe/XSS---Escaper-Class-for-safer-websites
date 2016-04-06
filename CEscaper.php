@@ -18,19 +18,22 @@ class Escaper
 		$this->CHARSET = $_SESSION['escaper_charset'];
 	}
 	
-	public function escape_HTML($string)
+	public function escapeHTML($string)
 	{
 		$result = htmlspecialchars($string, ENT_QUOTES | ENT_SUBSTITUTE, $this->CHARSET);
 		$result = str_replace('/', '&#x2F;', $result);
 		
 		return $result;
 	}
+	
+	public function escapeHTMLattr($string)
+	{
+		$result = preg_replace_callback("/[\W]/", function ($matches){
+			return "&#x" . bin2hex($matches[0]) . ";";
+		}, 
+		$string);
+
+		return $result;
+	}
 }
 
-$maliciousHTML = '></title><script>alert(1)</script>&"/()<?php$var=attack?> %*+,-/;<=>^and|';
-
-$escaper = new Escaper();
-
-$result = $escaper->escape_HTML($maliciousHTML);
-
-echo $result;
