@@ -35,5 +35,14 @@ class Escaper
 
 		return $result;
 	}
-}
+	
+	public function escapeJs($string)
+	{
+		$result = preg_replace_callback("/[\W]/", function ($matches){
+			return "\\x" . bin2hex($matches[0]);
+		}, 
+		$string);
 
+		return $result;
+	}
+}
