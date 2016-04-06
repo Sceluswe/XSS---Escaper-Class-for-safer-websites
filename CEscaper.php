@@ -45,4 +45,14 @@ class Escaper
 
 		return $result;
 	}
+	
+	public function escapeCSS($string)
+	{
+		$result = preg_replace_callback("/[\W]/", function ($matches){
+			return "\\" . bin2hex($matches[0]) . " ";
+		}, 
+		$string);
+
+		return $result;
+	}
 }
