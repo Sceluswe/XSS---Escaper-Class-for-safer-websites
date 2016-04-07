@@ -1,5 +1,5 @@
 {
-    "name": "scelusswe/escaper",
+    "name": "sceluswe/escaper",
     "description": "Provide extended escaping funtionality to prevent XSS attacks.",
     "require": {
         "php": ">=5.6"
