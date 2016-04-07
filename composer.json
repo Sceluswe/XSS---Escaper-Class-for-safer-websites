@@ -1,5 +1,5 @@
 {
-    "name": "CEscaper",
+    "name": "vendor/Escaper",
     "description": "Provide extended escaping funtionality to prevent XSS attacks.",
     "require": {
         "php": ">=5.6.0"
