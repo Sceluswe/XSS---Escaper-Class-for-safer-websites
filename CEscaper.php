@@ -1,5 +1,7 @@
 <?php
 
+namespace Scelus\Escaper;
+
 /*
 * All functions are based on the recommendations in the 
 * XSS (Cross Site Scripting) Prevention Cheat Sheet:
@@ -31,6 +33,10 @@ class Escaper
 		$this->CHARSET = $_SESSION['escaper_charset'];
 	}
 	
+	/** Returns the used charset for the esacpeHTML and escapeXML function.
+	*
+	* @return the current charset as a string.
+	*/
 	public function getEncoding()
 	{
 		return $this->CHARSET;
