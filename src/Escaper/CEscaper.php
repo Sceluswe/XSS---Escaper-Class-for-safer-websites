@@ -9,7 +9,7 @@ namespace Scelus\Escaper;
 * 
 */
 
-class Escaper
+class CEscaper
 {
 	private $CHARSET;
 	
