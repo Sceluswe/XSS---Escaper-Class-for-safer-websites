@@ -11,7 +11,7 @@ namespace Scelus\Escaper;
 class CEscaper
 {
 	private $CHARSET;
-	
+
 	public function __construct($encoding = 'UTF-8') {
 		isset($_SESSION['escaper_charset']) 
 			? $this->CHARSET = $_SESSION['escaper_charset'] 
@@ -19,7 +19,7 @@ class CEscaper
 			
 		$this->CHARSET = $_SESSION['escaper_charset'];
 	}
-	
+
 	/** Sets the used charset for the esacpeHTML and escapeXML function.
 	*
 	* @param $value, the string/value to escape.
@@ -29,7 +29,7 @@ class CEscaper
 		$_SESSION['escaper_charset'] = strip_tags($value);
 		$this->CHARSET = $_SESSION['escaper_charset'];
 	}
-	
+
 	/** Returns the used charset for the esacpeHTML and escapeXML function.
 	*
 	* @return the current charset as a string.
@@ -37,7 +37,7 @@ class CEscaper
 	public function getEncoding() {
 		return $this->CHARSET;
 	}
-	
+
 	/** Escapes HTML string using htmlspecialchars().
 	*
 	* @param $string, the untrusted string to escape.
@@ -50,7 +50,7 @@ class CEscaper
 		
 		return $result;
 	}
-	
+
 	/** Escapes non-alphanumeric characters in an untrusted string for HTML attribute values.
 	*
 	* @param $string, the untrusted string to escape.
@@ -58,14 +58,13 @@ class CEscaper
 	* @return $result, escaped string.
 	*/
 	public function escapeHTMLattr($value) {
-		$result = preg_replace_callback("/[\W]/", function ($matches){
+		$result = preg_replace_callback("/[\W]/", function ($matches) {
 			return "&#x" . bin2hex($matches[0]) . ";";
 		}, 
 		$value);
-
 		return $result;
 	}
-	
+
 	/** Escapes non-alphanumeric characters in an untrusted string for JS input values.
 	*
 	* @param $string, the untrusted string to escape.
@@ -73,14 +72,14 @@ class CEscaper
 	* @return $result, escaped string.
 	*/
 	public function escapeJs($value) {
-		$result = preg_replace_callback("/[\W]/", function ($matches){
+		$result = preg_replace_callback("/[\W]/", function ($matches) {
 			return "\\x" . bin2hex($matches[0]);
 		}, 
 		$value);
 
 		return $result;
 	}
-	
+
 	/** Escapes non-alphanumeric characters in an untrusted string for CSS input values.
 	*
 	* @param $string, the untrusted string to escape.
@@ -88,14 +87,14 @@ class CEscaper
 	* @return $result, escaped string.
 	*/
 	public function escapeCSS($value) {
-		$result = preg_replace_callback("/[\W]/", function ($matches){
+		$result = preg_replace_callback("/[\W]/", function ($matches) {
 			return "\\" . bin2hex($matches[0]) . " ";
 		}, 
 		$value);
 
 		return $result;
 	}
-	
+
 	/** Escapes data that is to be inserted in a URL not the whole URL itself.
 	* 
 	* @param $string, the untrusted string to escape.
@@ -105,7 +104,7 @@ class CEscaper
 	public function escapeUrl($value) {
 		return rawurlencode($value);
 	}
-	
+
 	/**
 	* Aliases to HTML functions for semantic value.
 	* XML escaping is identical to HTML escaping.
