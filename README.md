@@ -1,3 +1,5 @@
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Sceluswe/XSS-Escaper/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Sceluswe/XSS-Escaper/?branch=master)
+
 # XSS---Escaper-Class-for-safer-websites
 Escaper Class to prevent XSS attacks
 
