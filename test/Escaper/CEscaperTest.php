@@ -135,4 +135,4 @@ class CEscaperTest extends \PHPUnit_Framework_TestCase
 		$exp = "&#x22;&#x3e;&#x3c;h1&#x3e;Hello&#x3c;&#x2f;table";
 		$this->assertEquals($res, $exp, "escapeHTMLattr() produced missmatch");
 	}
-};
+}
