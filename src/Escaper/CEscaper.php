@@ -58,7 +58,7 @@ class CEscaper
 	* @return $result, escaped string.
 	*/
 	public function escapeHTMLattr($value) {
-		$result = preg_replace_callback("/[\W]/", function ($matches) {
+		$result = preg_replace_callback("/[\W]/", function($matches) {
 			return "&#x" . bin2hex($matches[0]) . ";";
 		}, 
 		$value);
@@ -72,7 +72,7 @@ class CEscaper
 	* @return $result, escaped string.
 	*/
 	public function escapeJs($value) {
-		$result = preg_replace_callback("/[\W]/", function ($matches) {
+		$result = preg_replace_callback("/[\W]/", function($matches) {
 			return "\\x" . bin2hex($matches[0]);
 		}, 
 		$value);
@@ -87,7 +87,7 @@ class CEscaper
 	* @return $result, escaped string.
 	*/
 	public function escapeCSS($value) {
-		$result = preg_replace_callback("/[\W]/", function ($matches) {
+		$result = preg_replace_callback("/[\W]/", function($matches) {
 			return "\\" . bin2hex($matches[0]) . " ";
 		}, 
 		$value);
