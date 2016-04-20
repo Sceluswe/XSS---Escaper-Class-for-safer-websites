@@ -11,16 +11,16 @@ namespace Scelus\Escaper;
 class CEscaperTest extends \PHPUnit_Framework_TestCase
 {
 	/**
-	* Test 
-	*
-	* @return void
-	*/
+	 * Test 
+	 *
+	 * @return void
+	 */
 	public function testConstructorSuccess() {
 		$el = new \Scelus\Escaper\CEscaper();
 
-        $res = $el->getEncoding();
-        $exp = 'UTF-8';
-        $this->assertEquals($res, $exp, "Created element name missmatch.");
+		$res = $el->getEncoding();
+		$exp = 'UTF-8';
+		$this->assertEquals($res, $exp, "Created element name missmatch.");
 	}
 
 	/**
@@ -42,10 +42,10 @@ class CEscaperTest extends \PHPUnit_Framework_TestCase
 	}
 
 	/**
-	* Test 
-	*
-	* @return void
-	*/
+	 * Test 
+	 *
+	 * @return void
+	 */
 	public function testEscapeHTML() {
 		$el = new \Scelus\Escaper\CEscaper();
 		
@@ -56,10 +56,10 @@ class CEscaperTest extends \PHPUnit_Framework_TestCase
 	}
 
 	/**
-	* Test 
-	*
-	* @return void
-	*/
+	 * Test 
+	 *
+	 * @return void
+	 */
 	public function testEscapeHTMLattr() {
 		$el = new \Scelus\Escaper\CEscaper();
 		
@@ -70,10 +70,10 @@ class CEscaperTest extends \PHPUnit_Framework_TestCase
 	}
 
 	/**
-	* Test 
-	*
-	* @return void
-	*/
+	 * Test 
+	 *
+	 * @return void
+	 */
 	public function testEscapeUrl() {
 		$el = new \Scelus\Escaper\CEscaper();
 		
@@ -84,10 +84,10 @@ class CEscaperTest extends \PHPUnit_Framework_TestCase
 	}
 
 	/**
-	* Test 
-	*
-	* @return void
-	*/
+	 * Test 
+	 *
+	 * @return void
+	 */
 	public function testEscapeCSS() {
 		$el = new \Scelus\Escaper\CEscaper();
 		
@@ -98,10 +98,10 @@ class CEscaperTest extends \PHPUnit_Framework_TestCase
 	}
 
 	/**
-	* Test 
-	*
-	* @return void
-	*/
+	 * Test 
+	 *
+	 * @return void
+	 */
 	public function testEscapeJs() {
 		$el = new \Scelus\Escaper\CEscaper();
 		$argument = "'; alert(100); var x='";
@@ -111,10 +111,10 @@ class CEscaperTest extends \PHPUnit_Framework_TestCase
 	}
 
 	/**
-	* Test 
-	*
-	* @return void
-	*/
+	 * Test 
+	 *
+	 * @return void
+	 */
 	public function testEscapeXML() {
 		$el = new \Scelus\Escaper\CEscaper();
 		$argument = '></div><h1>myattack</h1>';
@@ -124,10 +124,10 @@ class CEscaperTest extends \PHPUnit_Framework_TestCase
 	}
 
 	/**
-	* Test 
-	*
-	* @return void
-	*/
+	 * Test 
+	 *
+	 * @return void
+	 */
 	public function testEscapeXmlattr() {
 		$el = new \Scelus\Escaper\CEscaper();
 		$argument = '"><h1>Hello</table';
