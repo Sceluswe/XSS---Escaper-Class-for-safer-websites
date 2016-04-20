@@ -1,6 +1,4 @@
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Sceluswe/XSS-Escaper/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Sceluswe/XSS-Escaper/?branch=master)
-
-[![Build Status](https://scrutinizer-ci.com/g/Sceluswe/XSS-Escaper/badges/build.png?b=master)](https://scrutinizer-ci.com/g/Sceluswe/XSS-Escaper/build-status/master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/Sceluswe/XSS-Escaper/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/Sceluswe/XSS-Escaper/?branch=master)[![Build Status](https://scrutinizer-ci.com/g/Sceluswe/XSS-Escaper/badges/build.png?b=master)](https://scrutinizer-ci.com/g/Sceluswe/XSS-Escaper/build-status/master)
 
 # XSS---Escaper-Class-for-safer-websites
 Escaper Class to prevent XSS attacks
